@@ -1,0 +1,222 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search for name.." title="Type a name">
+
+
+<div style="padding-left:16px">
+<h1><span style="text-transform: uppercase;">All Laureates</span></h1>
+</div>
+<div class="row" style="display: flex;">
+<div class="column" style="flex: 10%;">
+
+<h2>Name</h2>
+<ul id="myMenu" style="list-style: none;" display=block>
+  {{#each people}}
+  <li><a href="/name/{{this}}">{{this}}</a></li>
+  {{/each}}
+  <h2 id="notFound"></h2>
+</ul>
+</div>
+<div class="column" style="flex:20%;">
+  <h2>Category</h2>
+  <ul id="myMenu" style="list-style: none;">
+    {{#each category}}
+    <li><a href="/laureat/category/{{this}}">{{this}}</a></li>
+    {{/each}}
+  </ul>
+</div>
+<script>
+
+
+function myFunction() {
+    // Declare variables
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("mySearch");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myMenu");
+    li = ul.getElementsByTagName("li");
+
+    // Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+
+        } else {
+            li[i].style.display = "none";
+
+        }
+
+    }
+
+
+}
+</script>
+
+<!--<h1><span style="text-transform: uppercase;">All Laureates</span></h1>
+
+<div class="row" style="display: flex;">
+<div class="column" style="flex: 15%;">
+
+<h2>Name</h2>
+  {{#each people}}
+  <h3><a href="/name/{{this}}">{{this}}</a></h3>
+  {{/each}}
+</div>
+<div class="column" style="flex:20%;">
+  <h2>Category</h2>
+    {{#each category}}
+    <h3><a href="/laureat/category/{{this}}">{{this}}</a></h3>
+    {{/each}}
+</div>-->
+
+<!--<h1>{{nobel}}</h1>
+<div class="row" style="display: flex;">
+<div class="column" style="flex: 30%;">
+<table width=15% border= 3px>
+  <thead>
+    <tr>
+      <th border= 3px padding= "2px 4px"><h2>Category<h2></th>
+    </tr>
+  </thead>
+<tbody>
+    <tr>
+      <td border= 3px padding= "2px 4px">
+        {{#each category}}
+        <h3><a href="/laureat/{{this}}">{{this}}</a></h3>
+        {{/each}}
+    </td>
+
+    </tr>
+</tbody>
+</table>
+<div>
+<div id="form" class="column" style="flex: 90%;">
+  <fieldset>
+          <legend>Enter New Laureate</legend><br>
+          <div>
+          <label>First name:</label> <input type="text" name="firstname" placeholder="Enter first name..." required>
+          <label>Surname:</label> <input type="text" name="surname" placeholder="Enter surname..." required>
+        </div>
+
+          <div>
+          <label>Gender:</label> <input type="text" name="gender" placeholder="Enter gender..." required>
+          <label>BornCountry: <input type="text" name="bornCountry" placeholder="Enter country of birth..." required>
+        </div>
+
+          <div>
+          <label>Prize:</label> <input type="text" name="Prizes" placeholder="Enter Prize info..." required>
+        </div>
+          Description : <br />
+       <textarea rows = "5" cols = "50" name = "description">
+          Enter description here...
+       </textarea>-->
+
+      <!--    <div>
+          <label>Affiliation:</label> <input type="text" name="Affiliation" placeholder="Enter Affiliation info..." required>
+        </div>
+
+          <div>
+          <input type="submit" value="Add Laureate">
+        </div>
+      </fieldset>
+      </form>
+</div>
+
+</div>-->
+<!--<td>
+  {{#each borncountry}}
+  <h3>{{this}}</h3>
+  {{/each}}
+</td>
+<td>
+  {{#each prize_year}}
+  <h3>{{this}}</h3>
+  {{/each}}
+</td>
+<td>
+  {{#each year_of_birth}}
+  <h3>{{this}}</h3>
+  {{/each}}
+</td>
+<td>
+  {{#each gender}}
+  <h3>{{this}}</h3>
+  {{/each}}
+</td>-->
+<!--<div class="row" style="display: flex;">
+<div class="column" style="flex: 30%;">-->
+
+<!--</div>
+  <div class="column">
+  {{#each people}}
+     <h3><a href= "/rep/{{this}}">{{this}}</a></h3>
+  {{/each}}
+</div>
+</div>
+
+
+</div>
+  <div class="column" style="flex: 90%;">
+  {{#each category}}
+  <h3><a href="/state/{{this}}">{{this}}</a></h3>
+  {{/each}}
+</div>
+</div>-->
+<!--
+</div>
+  <div class="column" style="flex: 90%;">
+  {{#each prize_year}}
+  <h3><a href="/state/{{this}}">{{this}}</a></h3>
+  {{/each}}
+</div>
+</div>
+
+</div>
+  <div class="column" style="flex: 90%;">
+  {{#each gender}}
+  <h3><a href="/state/{{this}}">{{this}}</a></h3>
+  {{/each}}
+</div>
+</div>
+
+</div>
+  <div class="column" style="flex: 90%;">
+  {{#each year_of_birth}}
+  <h3><a href="/state/{{this}}">{{this}}</a></h3>
+  {{/each}}
+</div>
+</div>
+
+</div>
+  <div class="column" style="flex: 90%;">
+  {{#each borncountry}}
+  <h3><a href="/state/{{this}}">{{this}}</a></h3>
+  {{/each}}
+</div>
+</div>
+
+</div>
+  <div class="column" style="flex: 90%;">
+  {{#each affiliation}}
+  <h3><a href="/state/{{this}}">{{this}}</a></h3>
+  {{/each}}
+</div>
+</div>
+
+</div>
+  <div class="column" style="flex: 90%;">
+  {{#each motivation}}
+  <h3><a href="/state/{{this}}">{{this}}</a></h3>
+  {{/each}}
+</div>
+</div>
+
+</div>
+  <div class="column" style="flex: 90%;">
+  {{#each state}}
+  <h3><a href="/state/{{this}}">{{this}}</a></h3>
+  {{/each}}
+ </div>
+</div>
+-->

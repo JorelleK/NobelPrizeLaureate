@@ -1,0 +1,57 @@
+<form method="post" action="/awards/{{id}}">
+  <fieldset>
+          <legend>Enter Prize info</legend><br>
+          <div>
+          <label>year:</label> <input type="text" name="year" placeholder="Enter year..." required>
+          <label>category:</label> <input type="text" name="category" placeholder="Enter category..." required>
+        </div>
+
+          <div>
+          <label>motivation:</label> <input type="text" name="motivation" placeholder="Enter motivation..." required>
+
+        </div>
+        <div>
+      </div>
+    </fieldset>
+  <fieldset>
+          <legend>Enter Affiliation info</legend><br>
+          <div>
+          <label>School name:</label> <input type="text" name="name" placeholder="Enter school name..." required>
+          <label>city:</label> <input type="text" name="city" placeholder="Enter city..." required>
+        </div>
+
+          <div>
+          <label>country:</label> <input type="text" name="country" placeholder="Enter country..." required>
+
+        </div>
+        <div>
+        <input type="submit" value="Add Prize and Affiliation Info">
+      </div>
+    </fieldset>
+</form>
+
+
+
+          <!--</form>
+          <form method="post" action="/awards/{{id}}">Description : <br />
+       <textarea rows = "5" cols = "50" name = "description">
+          Enter description here...
+       </textarea>
+
+       <div>
+         <label>Prize:</label>
+                 <input type="text" name="laureate.prizes.year" placeholder="Enter Prize year...">
+                 <input type="text" name="laureate.prizes.category" placeholder="Enter category...">
+                 <input type="text" name="laureate.prizes.motivation" placeholder="Enter motivation...">
+     </div>
+         <!--Description : <br />
+      <textarea rows = "5" cols = "50" name = "description">
+         Enter description here...
+      </textarea>
+         <div>
+         <label>Affiliation:</label>
+         <input type="text" name="laureate.affiliation.name" placeholder="Enter school name...">
+         <input type="text" name="laureate.affiliation.city" placeholder="Enter city...">
+         <input type="text" name="laureate.affiliation.country" placeholder="Enter country...">
+       </div>
+-->

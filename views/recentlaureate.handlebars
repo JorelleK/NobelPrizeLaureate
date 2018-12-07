@@ -1,0 +1,35 @@
+<h1><span style="text-transform: uppercase;">All Laureates from 2013 to 2018 </span></h1>
+
+<div class="row" style="display: flex;">
+<div class="column" style="flex: 50%;">
+
+<h2>Name</h2>
+  {{#each name}}
+  <h3>{{this}}</h3>
+  {{/each}}
+</div>
+<div class="column" style="flex:20%;">
+  <h2>Category</h2>
+    {{#each category}}
+    <h3>{{this}}</h3>
+    {{/each}}
+</div>
+<div class="column" style="flex:20%;">
+  <h2>Gender</h2>
+    {{#each gender}}
+    <h3>{{this}}</h3>
+    {{/each}}
+</div>
+<div class="column" style="flex:20%;">
+  <h2>Date of Birth</h2>
+    {{#each born}}
+    <h3>{{this}}</h3>
+    {{/each}}
+</div>
+
+<div class="column" style="flex:20%;">
+  <h2>Year of Award</h2>
+    {{#each years}}
+    <h3>{{this}}</h3>
+    {{/each}}
+</div>
