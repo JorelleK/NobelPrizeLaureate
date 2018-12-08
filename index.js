@@ -8,14 +8,14 @@ var mongoose = require('mongoose');
 var request = require('request');
 var Laureates = require('./models/Laureates');
 var Prize = require('./models/Prize');
-//var dotenv = require('dotenv');
+var dotenv = require('dotenv');
 
 var _DATA = dataUtil.loadData().laureates;
 var name = []
 var app = express();
 
 //dataUtil.restoreOriginalData();
-//dotenv.load();
+dotenv.load();
 
 //connect to mlab database (set up mongoose connection)
 var db = "mongodb://joma:finalproject1@ds235461.mlab.com:35461/myproject";
@@ -101,7 +101,7 @@ app.get('/addlaureate', function(req,res){
 
    Laureates.findOne({ _id: req.params.id }, function(err, laureate) {
         if (err) throw err;
-        if (!laureate) return res.send('No movie found with that ID.');
+        if (!laureate) return res.send('No Laureate found with that ID.');
 
         laureate.prizes.push({
             year: parseInt(req.body.year),
@@ -443,7 +443,7 @@ res.render('facts', {
 
 
 
- app.listen(3000, function() {
+ app.listen(process.env.PORT || 3000, function() {
      console.log('App listening on port 3000!');
  })
 

@@ -1,33 +1,38 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search for name.." title="Type a name">
-
 
 <div style="padding-left:16px">
 <h1><span style="text-transform: uppercase;">All Laureates</span></h1>
 </div>
 <div class="row" style="display: flex;">
 <div class="column" style="flex: 10%;">
-
+<input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search for name.." title="Type a name">
+<div id="myMenu">
 <h2>Name</h2>
 <ul id="myMenu" style="list-style: none;" display=block>
   {{#each people}}
   <li><a href="/name/{{this}}">{{this}}</a></li>
   {{/each}}
-  <h2 id="notFound"></h2>
+  <div class="not-found" style="display:none"><h3>No Laureat Found</h3></div>
 </ul>
+
+</div>
 </div>
 <div class="column" style="flex:20%;">
   <h2>Category</h2>
-  <ul id="myMenu" style="list-style: none;">
+  <ul style="list-style: none;">
     {{#each category}}
     <li><a href="/laureat/category/{{this}}">{{this}}</a></li>
     {{/each}}
   </ul>
 </div>
+
+<script src="http://listjs.com/no-cdn/list.js"></script>
+<script src="http://listjs.com/no-cdn/list.pagination.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+
+
 <script>
-
-
 function myFunction() {
     // Declare variables
     var input, filter, ul, li, a, i;
@@ -40,16 +45,18 @@ function myFunction() {
     for (i = 0; i < li.length; i++) {
         a = li[i].getElementsByTagName("a")[0];
         if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
+            //document.getElementById("list").style.display = "block";
+            li[i].style.display = "block";
+            $('.not-found').hide();
 
         } else {
+
+            //document.getElementById("list").style.display = "none";
+            $('.not-found').show();
             li[i].style.display = "none";
 
         }
-
     }
-
-
 }
 </script>
 
