@@ -21,7 +21,7 @@ dotenv.load();
 var db = "mongodb://joma:finalproject1@ds235461.mlab.com:35461/myproject";
 console.log(db);
 
-var promise = mongoose.connect(process.env.MONGODB || db, {useNewUrlParser: true});
+var promise = mongoose.connect(db, {useNewUrlParser: true});
 
 mongoose.Promise = global.Promise;
 mongoose.connection.on('error', function() {
