@@ -21,7 +21,7 @@ dotenv.load();
 var db = "mongodb://joma:finalproject1@ds235461.mlab.com:35461/myproject";
 console.log(db);
 
-var promise = mongoose.connect(process.env.PORT || db, {useNewUrlParser: true});
+var promise = mongoose.connect(process.env.MONGODB || db, {useNewUrlParser: true});
 
 mongoose.Promise = global.Promise;
 mongoose.connection.on('error', function() {
@@ -443,7 +443,7 @@ res.render('facts', {
 
 
 
- app.listen(process.env.PORT || 3000, function() {
+ app.listen(process.env.MONGODB || 3000, function() {
      console.log('App listening on port 3000!');
  })
 
